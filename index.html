@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="col-md-5 d-flex align-items-center">
-                    <img src="assets/img/top-main.png" alt="main-banner" class="img-fluid main-banner">
+                    <img src="assets/img/top-main.png" alt="main-banner" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -316,7 +316,8 @@
         <div class="container">
             <div class="sec-title-center text-center mb-5">
                 <h2 class="heading">Our Process</h2>
-                <p>To ensure your satisfaction, we've divided our SaaS Explainer Video Production<br> process into two phases: <b>Pre-production and Production.</b>
+                <p>To ensure your satisfaction, we've divided our SaaS Explainer Video Production<br> process into two
+                    phases: <b>Pre-production and Production.</b>
             </div>
             <div class="row process-row">
                 <div class="col-md-7">
@@ -783,7 +784,6 @@
         <hr>
     </Footer>
 
-    <script src="../script/script.js"></script>
     <script src="OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -791,6 +791,33 @@
     <!--Font awesome 5 kit-->
     <script src="https://kit.fontawesome.com/4f8c93ac3e.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add minus icon for collapse element which
+            // is open by default
+            $(".collapse.show").each(function () {
+                $(this).prev(".card-header").find(".fa")
+                    .addClass("fa-minus").removeClass("fa-plus");
+            });
+            // Toggle plus minus icon on show hide
+            // of collapse element
+            $(".collapse").on('show.bs.collapse', function () {
+                $(this).prev(".card-header").find(".fa")
+                    .removeClass("fa-plus").addClass("fa-minus");
+            }).on('hide.bs.collapse', function () {
+                $(this).prev(".card-header").find(".fa")
+                    .removeClass("fa-minus").addClass("fa-plus");
+            });
+        });
+    </script>
+    <script>
+        (function ($) {
+            "use strict";
+            $('.next').click(function () { $('.carousel').carousel('next'); return false; });
+            $('.prev').click(function () { $('.carousel').carousel('prev'); return false; });
+        })
+            (jQuery);
+    </script>
 </body>
 
 </html>
